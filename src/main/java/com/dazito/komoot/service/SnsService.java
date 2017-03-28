@@ -34,7 +34,6 @@ public class SnsService {
     private NotificationRepository notificationRepository;
     
     public void onNewNotification(SnsNotification snsNotification) {
-//        snsNotification.getRecords().forEach(this::processRecords);
         final ObjectMapper mapper = new ObjectMapper();
         final String message = snsNotification.getMessage();
 
@@ -47,26 +46,6 @@ public class SnsService {
                     ex.getMessage());
         }
     }
-    
-//    private void processRecords(Records records) {
-//        if(records == null) {
-//            LOGGER.warn("Received a null instance of Records");
-//            return;
-//        }
-//        
-//        final ObjectMapper mapper = new ObjectMapper();
-//        final Sns sns = records.getSns();
-//        final String message = sns.getMessage();
-//
-//        try {
-//            final Notification notification = mapper.readValue(message, Notification.class);
-//            persistNotification(notification);
-//        } 
-//        catch (IOException ex) {
-//            LOGGER.error("Error while proessing the record received from SNS - reason: {}",
-//                    ex.getMessage());
-//        }
-//    }
     
     private void persistNotification(Notification notification) {
         if(notification == null) {
