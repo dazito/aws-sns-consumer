@@ -39,7 +39,7 @@ public class NotificationBatchBean {
     private static final String YOUR_FRIENDS_ARE_ACTIVE = ", your friends are active!\n\n";
     private static final String HI = "Hi ";
     private static final String EMAIL_SUBJECT = "You have new notifications";
-    private static final String FROM_EMAIL_ADDRESS = "pedro.m@outlook.com";
+    private static final String FROM_EMAIL_ADDRESS = "my@email.com";
     
     @Autowired
     private NotificationRepository notificationRepository;
